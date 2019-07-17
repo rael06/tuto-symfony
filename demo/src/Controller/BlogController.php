@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Form\ArticleType as ArticleTypeAlias;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use DateTime;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -49,7 +49,7 @@ class BlogController extends AbstractController
 			$article = new Article();
 		}
 
-		$form = $this->createForm(ArticleTypeAlias::class, $article);
+		$form = $this->createForm(ArticleType::class, $article);
 
 		$form->handleRequest($request);
 
